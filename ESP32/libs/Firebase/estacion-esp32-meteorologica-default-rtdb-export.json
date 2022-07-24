@@ -1,0 +1,15 @@
+{
+  "Estacion": {
+    "sensor": "{\"Temperatura\": 22, \"Humedad\": 65}"
+  },
+  "hugo": {
+    "sensor": {
+      "valor_a": [
+        "andinas",
+        5,
+        3.6
+      ],
+      "valor_b": "xxx"
+    }
+  }
+}
