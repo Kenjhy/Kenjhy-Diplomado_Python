@@ -1,9 +1,14 @@
-from machine import Pin, PWM
-import utime
+from machine import Pin, PWM, ADC
+from utime import sleep_ms
 
 def main():
     
     servo = PWM(Pin(13), freq=50)
+    print(servo)
+    humedad_tierra = ADC(Pin(36), attn=3)#Analogo converison digital; trabaja resolucino del procesador
+    print(humedad_tierra)
+    humedad_tierra.atten(ADC.ATTN_11DB)
+    humedad_tierra.width(ADC.WIDTH_10BIT)
     
     def map(x):
         #return int((x - 0) * (8000-1800) / (180 - 0) +1800) # v1.19 -- duty_u16(m) -- 0 y 65536
@@ -12,6 +17,8 @@ def main():
         
     while True:
         
+        porcentaje_humedad_suelo = map(humedad_tierra)
+        print(porcentaje_humedad_suelo) #Formatear !!!!!!
          
         angulo = float(input("ingrese el angulo entre 0° y 180°: "))
          

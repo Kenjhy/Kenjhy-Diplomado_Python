@@ -2,7 +2,7 @@ from machine import Pin
 import bluetooth
 from BLE import BLEUART
 
-bombillo= Pin(15, Pin.OUT)
+bombillo= Pin(26, Pin.OUT)
 
 name= "EspHugo" 
 
